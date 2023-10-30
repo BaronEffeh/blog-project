@@ -1,8 +1,14 @@
 const express = require('express');
 const morgan = require('morgan');
+const mongoose = require('mongoose');
+
 
 // express app
 const app = express();
+
+//connect to mongodb
+const dbURI = 'mongodb+srv://effehbaron:U13hs1045@effehdb.4slnbhs.mongodb.net/effeh-db?retryWrites=true&w=majority';
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // register view engine
 app.set('view engine', 'ejs');
